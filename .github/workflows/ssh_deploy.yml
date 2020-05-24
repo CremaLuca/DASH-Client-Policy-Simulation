@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: install ssh password
-      run: apt-get install sshpass
+      run: sudo apt-get install sshpass
 
     - name: ssh deploy
       run: sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -r ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:/esercizi /
