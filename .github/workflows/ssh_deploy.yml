@@ -26,5 +26,5 @@ jobs:
       run: sudo apt-get install sshpass
 
     - name: ssh deploy
-      run: scp -q -r ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:/esercizi /
+      run: sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -q -r ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:/esercizi /
       
