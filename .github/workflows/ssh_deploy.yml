@@ -21,12 +21,10 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      
+    - name: install ssh password
+      run: sudo apt-get install sshpass
 
     - name: ssh deploy
-      uses: garygrossgarten/github-action-scp@release
-      with:
-          local: /
-          remote: esercizi
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
+      run: sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -q -r ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:/esercizi /
+      
