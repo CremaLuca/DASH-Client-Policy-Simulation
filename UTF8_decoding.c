@@ -37,6 +37,7 @@ int main(char *args[])
     for (int j = 0; j < bufferLength; j++)
     {
         int parts = getSymbolPartsCount(buffer[j]);
+        printf("Header: %d Parts: %d \n", buffer[j], parts);
         output = buffer[j] & (0xFF >> parts); // Rimuovo i bit a 1 prima dello 0 dall'header (es 110xxxxx -> 0xxxxx00 -> 000xxxxx)
         output <<= 6 * (parts - 1); // Moltiplico per 2^#bit nei trailing bytes che verranno, ovvero 6 per ogni byte
         //Leggiamo gli elementi successivi
@@ -45,6 +46,7 @@ int main(char *args[])
             j++; // Passaggio al byte successivo
             output += ((buffer[j] & 0x3F) << 6 * (parts - i - 1));
         }
+        printf("Output: %x \n", output);
         fwrite(&output, sizeof(int), 1, outputDataFile);
     }
     fclose(inputDataFile);
