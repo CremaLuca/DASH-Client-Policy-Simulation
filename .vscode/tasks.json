@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "g++.exe build folder",
+        "command": "C:\\MinGW\\bin\\g++.exe",
+        "args": ["-g", "${workspaceFolder}\\*.cpp", "${workspaceFolder}\\*.hpp", "-o", "${workspaceFolder}\\main.exe"],
+        "options": {
+          "cwd": "C:\\MinGW\\bin"
+        },
+        "problemMatcher": ["$gcc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
