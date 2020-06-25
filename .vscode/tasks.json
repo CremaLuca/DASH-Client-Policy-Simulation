@@ -5,7 +5,7 @@
         "type": "shell",
         "label": "g++.exe build folder",
         "command": "C:\\MinGW\\bin\\g++.exe",
-        "args": ["-g", "${workspaceFolder}\\*.cpp", "${workspaceFolder}\\*.hpp", "-o", "${workspaceFolder}\\main.exe"],
+        "args": ["-g", "${workspaceFolder}\\src\\*.cpp", "${workspaceFolder}\\src\\*.hpp", "-o", "${workspaceFolder}\\main.exe"],
         "options": {
           "cwd": "C:\\MinGW\\bin"
         },
