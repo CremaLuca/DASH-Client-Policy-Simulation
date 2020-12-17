@@ -1,5 +1,5 @@
 /**
- * DASH policy algorithm.
+ * DASH client policy class and a few implementations.
  * @autor Luca Crema
  * @date 11/06/2020
  */
@@ -24,6 +24,7 @@ public:
      * @param playTime of the media.
      * @param responses previous responses from server to requests (used for bitrate).
      * @param buffer of loaded segments.
+     * @param segments the Media Presentation Descriptor file entries.
      * @returns a pair of <position, encoding level> to request.
      */
     virtual std::pair<int, int> createRequest(float playTime, std::vector<Response *> responses, Segment **buffer, std::vector<MPDGroup *> segments)
