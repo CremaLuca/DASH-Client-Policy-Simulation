@@ -27,8 +27,7 @@ private:
     static int getConsecutiveBufferSegmentCount(Segment **buffer, int maxLength)
     {
         int i;
-        for (i = 0; buffer[i] != nullptr && i < maxLength; i++)
-            ;
+        for (i = 0; buffer[i] != nullptr && i < maxLength; i++);
         return i;
     }
 
